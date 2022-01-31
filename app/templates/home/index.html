@@ -48,6 +48,7 @@ CognitivPyShop
         <p> If you want to use the app, please contact the datascientest staff</p>
         {% endif %}
         <p> Or, please create an account to use our great API ! Enjoy your stay</p>
+          <img src="./static/images/flask.png" alt="flask" style="width: 280px">
       </div>
       {% for message in get_flashed_messages(with_categories=True) %}
       <div class="logout logout-{{ message[0] }}">
@@ -58,7 +59,6 @@ CognitivPyShop
    {% block footer %}
    <div class="container">
       <div id="footer">
-          <img src="./static/images/flask.jpg" alt="flask">
            <p>Proposed by Datascientest &copy; No Rights Reserved.</p>
      </div>
   </div>

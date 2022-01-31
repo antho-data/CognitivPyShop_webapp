@@ -16,7 +16,6 @@ from .models import User, Predictions
 from .forms import RegistrationForm, LoginForm, CreationForm, DeleteForm, ModelForm
 from .backend.preprocessing import remove_tempfile
 
-
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.session_protection = "strong"
@@ -224,7 +223,6 @@ def download_db():
 def download_predict():
     path = "./predictions/results.csv"
     return send_file(path, as_attachment=True)
-
 
 
 @app.route('/logout')
