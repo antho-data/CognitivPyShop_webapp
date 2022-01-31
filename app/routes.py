@@ -119,7 +119,6 @@ def success_signup():
 @login_required
 @permission_required
 def return_model():
-    remove_tempfile()
     form = ModelForm()
     files_names = []
     if form.validate_on_submit():
@@ -164,6 +163,7 @@ def prediction():
     result[["Cat_1", "Cat_2", "Cat_3"]] = result[["Cat_1", "Cat_2", "Cat_3"]] \
         .apply(lambda x: x.map(classes))
     flash('Predictions saved !', category="success")
+    remove_tempfile()
     return render_template('models/predictions.html',
                            tables=[result.to_html(classes='data')],
                            titles="classes")

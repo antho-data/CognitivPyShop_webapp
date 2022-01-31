@@ -1,7 +1,10 @@
 from app import model
-from .preprocessing import encode, preprocess_sentence, tokenizer_cam, tokenizer_bert, MAX_LEN, make_test
+from .preprocessing import encode, preprocess_sentence, tokenizer_cam, tokenizer_bert, MAX_LEN, make_test, \
+    preprocessing_test
 import pandas as pd
 import numpy as np
+
+IMG_SHAPE = 224
 
 
 # Real func
@@ -10,6 +13,22 @@ def predict(df):
     text_input_ids_bert, text_attention_masks_bert = encode(df.text.values, tokenizer_bert, maxlen=MAX_LEN)
     text_input_ids_cam, text_attention_masks_cam = encode(df.text.values, tokenizer_cam, maxlen=MAX_LEN)
     image = df.filename.values
+    if len(image) == 1:
+        img_file = []
+        for file in image:
+            img = preprocessing_test(file)
+            img_file.append(img)
+        img_file = np.array(img_file)
+        text_input_ids_bert = np.expand_dims(text_input_ids_bert, axis=0)
+        text_attention_masks_bert = np.expand_dims(text_attention_masks_bert, axis=0)
+        text_input_ids_cam = np.expand_dims(text_input_ids_cam, axis=0)
+        text_attention_masks_cam = np.expand_dims(text_attention_masks_cam, axis=0)
+        y_pred = model.predict([img_file,
+                                text_input_ids_bert,
+                                text_attention_masks_bert,
+                                text_input_ids_cam,
+                                text_attention_masks_cam])
+        return y_pred
     dataset = make_test(image,
                         text_input_ids_bert,
                         text_attention_masks_bert,

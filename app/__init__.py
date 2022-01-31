@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from .backend.model import create_model
 
-classes = {0: "Mivres et romans",
+classes = {0: "Livres et romans",
            1: "Magazines",
            2: "Accessoires jeux videos",
            3: "Jouets enfance",
