@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from .backend.model import create_model
 
-classes = {0: "livres et romans",
-           1: "magazines",
+classes = {0: "Mivres et romans",
+           1: "Magazines",
            2: "Accessoires jeux videos",
            3: "Jouets enfance",
            4: "Livres et illustres",

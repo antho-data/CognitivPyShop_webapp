@@ -185,3 +185,4 @@ Traceback (most recent call last):
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: model/dropzone.html
 2022-01-31 13:20:04,352 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:257]
+2022-01-31 13:32:41,232 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:257]
