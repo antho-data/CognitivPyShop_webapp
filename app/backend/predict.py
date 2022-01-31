@@ -24,7 +24,6 @@ def predict(df):
 def save_to_csv(df, pred):
     pred_class = np.argpartition(pred, -3, axis=1)[:, -3:]
     pred_class = np.fliplr(pred_class)
-    print(pred_class)
     result = pd.DataFrame(pred_class, columns=["Cat_1", "Cat_2", "Cat_3"])
     result = pd.concat([df, result], axis=1)
     result.to_csv('app/predictions/results.csv', encoding='utf-8', index=False, header='True')

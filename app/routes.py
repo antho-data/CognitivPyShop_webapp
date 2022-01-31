@@ -133,7 +133,7 @@ def return_model():
         sentences = form.sentence.data
         sentences = sentences.splitlines()
         if len(files_names) != len(sentences):
-            flash('Please provide the same lenght !', category="info")
+            flash('Please provide the same length !', category="info")
             return redirect(url_for('return_model'))
         data = {'text': sentences, 'filename': files_names}
         df = pd.DataFrame(data)

@@ -153,3 +153,35 @@
 2022-01-31 12:28:13,940 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:253]
 2022-01-31 12:44:36,291 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:257]
 2022-01-31 12:53:45,508 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:257]
+2022-01-31 13:08:08,235 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:257]
+2022-01-31 13:10:47,936 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:257]
+2022-01-31 13:13:44,915 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:262]
+2022-01-31 13:14:54,710 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:262]
+2022-01-31 13:15:12,335 ERROR: Exception on /drop [GET] [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py", line 120, in drop
+    return render_template('model/dropzone.html')
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\flask\templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\jinja2\environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\jinja2\environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\jinja2\environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\flask\templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\venv\lib\site-packages\flask\templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: model/dropzone.html
+2022-01-31 13:20:04,352 INFO: errors [in C:\Users\Anthony\PycharmProjects\cognitivpyshop_webapp\app\routes.py:257]

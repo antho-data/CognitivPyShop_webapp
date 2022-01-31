@@ -44,7 +44,7 @@ Results
         <h2>Category recommended:</h2>
         {% for table in tables %}
         {{titles[loop.index]}}
-        <h2>{{ table|safe }}</h2>
+        <h5>{{ table|safe }}</h5>
         {% endfor %}
         <h4><a href="{{url_for('download_predict') }} ">Download CSV</a></h4>
 
