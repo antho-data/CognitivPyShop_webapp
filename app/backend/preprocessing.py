@@ -4,7 +4,6 @@ from nltk.tokenize import word_tokenize
 from transformers import CamembertTokenizer
 from transformers import BertTokenizer
 from tqdm import tqdm
-import cv2
 
 import os
 import numpy as np
