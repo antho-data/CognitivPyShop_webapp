@@ -73,7 +73,11 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
-        if user:
+        if user.admin == 1:
+            if check_password_hash(user.password, form.password.data):
+                login_user(user, remember=form.remember.data)
+                return redirect(url_for('dashboard'))
+        elif user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
                 return redirect(url_for('return_model'))
@@ -129,7 +133,7 @@ def return_model():
         sentences = form.sentence.data
         sentences = sentences.splitlines()
         if len(files_names) != len(sentences):
-            flash('Please provide the same len !', category="info")
+            flash('Please provide the same lenght !', category="info")
             return redirect(url_for('return_model'))
         data = {'text': sentences, 'filename': files_names}
         df = pd.DataFrame(data)

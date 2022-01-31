@@ -38,7 +38,7 @@ Rakuten Multimodal model
           <p>Only jpg or png accepted. Max 20 uploads per submit</p>
        {{ wtf.form_field(form.files) }}
           {% for file in files %}
-          <img src="{{ url_for('uploads', filename=file) }}" style="width: 64px">
+          <img src="{{ url_for('uploads', filename=file) }}" style="width: 85px">
           {% endfor %}
           <p>Max 5000 words.</p>
        {{ wtf.form_field(form.sentence) }}
